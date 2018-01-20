@@ -1,3 +1,5 @@
+package 'dirmngr'
+
 user node[:sonarr][:user] do
   system true
   manage_home true
@@ -21,12 +23,17 @@ when 'ubuntu'
     template '/etc/systemd/system/sonarr.service' do
       source 'sonarr.service.erb'
       variables user: node[:sonarr][:user]
-  end
+    end
   elsif node['platform_version'].to_f >= 12.04
     template '/etc/init/sonarr.conf' do
       source 'init.conf.erb'
       variables user: node[:sonarr][:user]
     end
+  end
+when 'debian'
+  template '/etc/systemd/system/sonarr.service' do
+    source 'sonarr.service.erb'
+    variables user: node[:sonarr][:user]
   end
 else
   template '/etc/init/sonarr.conf' do
@@ -34,8 +41,6 @@ else
     variables user: node[:sonarr][:user]
   end
 end
-
-service 'sonarr'
 
 directory ::File.join(node[:sonarr][:home], '.config') do
   user node[:sonarr][:user]
@@ -54,5 +59,8 @@ template ::File.join(node[:sonarr][:home], '.config/NzbDrone/config.xml') do
   group node[:sonarr][:user]
   mode 0600
   variables settings: node[:sonarr][:settings]
-  notifies :restart, 'service[sonarr]'
+end
+
+service 'sonarr' do
+  action :restart
 end

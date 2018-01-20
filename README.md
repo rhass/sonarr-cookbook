@@ -5,55 +5,25 @@ Installs [Sonarr](https://sonarr.tv) and its required dependencies.
 Attributes
 ----------
 #### sonarr::default
-<table>
-  <tr>
-    <th>Key</th>
-    <th>Type</th>
-    <th>Description</th>
-    <th>Default</th>
-  </tr>
-  <tr>
-    <td><tt>['sonarr']['user']</tt></td>
-    <td>String</td>
-    <td>User which sonarr will be ran as</td>
-    <td>sonarr</td>
-  </tr>
-  <tr>
-    <td><tt>['sonarr']['group']</tt></td>
-    <td>String</td>
-    <td>Group which owns the sonarr installation</td>
-    <td>sonarr</td>
-  </tr>
-  <tr>
-    <td><tt>['sonarr']['home']</tt></td>
-    <td>String</td>
-    <td>Directory where sonarr will place its `.config` directory</td>
-    <td>/home/sonarr</td>
-  </tr>
-  <tr>
-    <td><tt>['sonarr']['settings']</tt></td>
-    <td>Hash</td>
-    <td>Configuration options. Feel free to create a pull request for more custom options.</td>
-    <td>
-      <ul>
-        <li><tt>AnalyticsEnabled: True</tt></li>
-        <li><tt>ApiKey: changeme</tt></li>
-        <li><tt>AuthenticationMethod: None</tt></li>
-        <li><tt>BindAddress: *</tt></li>
-        <li><tt>Branch: master</tt></li>
-        <li><tt>EnableSsl: False</tt></li>
-        <li><tt>LaunchBrowser: True</tt></li>
-        <li><tt>LogLevel: Info</tt></li>
-        <li><tt>Port: 8989</tt></li>
-        <li><tt>SslCertHash: nil</tt></li>
-        <li><tt>SslPort: 9898</tt></li>
-        <li><tt>UpdateMechanism: BuiltIn</tt></li>
-        <li><tt>UrlBase: nil</tt></li>
-      </ul>
-      Empty settings should be defined as a set of quotes. e.g. `'""'`
-    </td>
-  </tr>
-</table>
+- `['sonarr']['user']` (`String`) - user which sonarr will be ran as
+- `['sonarr']['group']` (`String`) - group which owns the sonarr installation
+- `['sonarr']['home']` (`String`) - directory where sonarr will place its `.config` directory
+- `['sonarr']['settings']` (`Hash`) - configuration options
+  - `['sonarr']['AnalyticsEnabled']` (`String`) - `'True'`
+  - `['sonarr']['ApiKey']` (`String`) - `'changeme'`
+  - `['sonarr']['AuthenticationMethod']` (`String`) - `'None'`
+  - `['sonarr']['BindAddress']` (`String`) - `'*'`
+  - `['sonarr']['Branch']` (`String`) - `'master'`
+  - `['sonarr']['EnableSsl']` (`String`) - `'False'`
+  - `['sonarr']['LaunchBrowser']` (`String`) - `'True'`
+  - `['sonarr']['LogLevel']` (`String`) - `'Info'`
+  - `['sonarr']['Port']` (`Integer`) - `8989`
+  - `['sonarr']['SslCertHash']` (`String`) - `''`
+  - `['sonarr']['SslPort']` (`Integer`) - `9898`
+  - `['sonarr']['UpdateMechanism']` (`String`) - `'BuiltIn'`
+  - `['sonarr']['UrlBase']` (`String`) - `''`
+
+##### Empty settings should be defined as a set of quotes. e.g. `''`
 
 Usage
 -----
@@ -70,3 +40,8 @@ Contributing
 4. Write tests for your change (if applicable)
 5. Run the tests, ensuring they all pass
 6. Submit a Pull Request using Github
+
+Special Thanks
+--------------
+Jeroen Jacobs (jeroenj) did most of the work on this cookbook and deserves your
+thanks if you get any use out of it.

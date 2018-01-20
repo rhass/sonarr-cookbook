@@ -1,0 +1,9 @@
+DEPENDENCIES
+  sonarr
+    path: .
+    metadata: true
+
+GRAPH
+  apt (6.1.4)
+  sonarr (1.0.4)
+    apt (>= 0.0.0)

@@ -1,10 +1,11 @@
 name              'sonarr'
-maintainer        'Jeroen Jacobs'
-maintainer_email  'chef@jeroenj.be'
+maintainer        'James Conant'
+maintainer_email  'james@conant.io'
 license           'MIT'
 description       'Installs Sonarr.'
-version           '1.0.3'
-
-depends           'apt', '>= 2.6.0'
+version           '1.0.4'
 
 supports          'ubuntu'
+supports          'debian'
+
+depends           'apt'
