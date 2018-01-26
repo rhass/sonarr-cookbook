@@ -55,12 +55,17 @@ directory ::File.join(node['sonarr']['home'], '.config/NzbDrone') do
   recursive true
 end
 
-template ::File.join(node['sonarr']['home'], '.config/NzbDrone/config.xml') do
-  source 'config.xml.erb'
+file ::File.join(node['sonarr']['home'], '.config/NzbDrone/config.xml') do
   user node['sonarr']['user']
   group node['sonarr']['user']
   mode 0600
-  variables(settings: node['sonarr']['settings'])
+  content(lazy {
+    require 'nokogiri'
+    Nokogiri::XML::Builder.new {|xml| xml.Config { node[:sonarr][:settings].each {|k,v| xml.send(k, v) } }}.doc.root.to_xml(
+      save_with: Nokogiri::XML::Node::SaveOptions::NO_EMPTY_TAGS | Nokogiri::XML::Node::SaveOptions::FORMAT
+    )
+  })
+  notifies :restart, 'service[sonarr]'
 end
 
 service 'sonarr' do
