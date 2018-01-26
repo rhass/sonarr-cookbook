@@ -4,18 +4,18 @@ default['sonarr']['home'] = '/home/sonarr'
 
 default['sonarr']['apt']['uri'] = 'https://apt.sonarr.tv/'
 
-default['sonarr']['settings'] = {
-  'AnalyticsEnabled' => 'True',
-  'ApiKey' => 'changeme',
-  'AuthenticationMethod' => 'None',
-  'BindAddress' => '*',
-  'Branch' => 'master',
-  'EnableSsl' => 'False',
-  'LaunchBrowser' => 'True',
-  'LogLevel' => 'Info',
-  'Port' => 8989,
-  'SslCertHash' => nil,
-  'SslPort' => 9898,
-  'UpdateMechanism' => 'BuiltIn',
-  'UrlBase' => nil,
-}
+default['sonarr']['settings'].tap do |sonarr|
+  sonarr['AnalyticsEnabled']      = 'True'
+  sonarr['ApiKey']                = 'changeme'
+  sonarr['AuthenticationMethod']  = 'None'
+  sonarr['BindAddress']           = '*'
+  sonarr['Branch']                = 'master'
+  sonarr['EnableSsl']             = 'False'
+  sonarr['LaunchBrowser']         = 'True'
+  sonarr['LogLevel']              = 'Info'
+  sonarr['Port']                  = 8989
+  sonarr['SslCertHash']           = nil
+  sonarr['SslPort']               = 9898
+  sonarr['UpdateMechanism']       = 'BuiltIn'
+  sonarr['UrlBase']               = nil
+end

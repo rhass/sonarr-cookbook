@@ -8,20 +8,19 @@ Attributes
 - `['sonarr']['user']` (`String`) - user which sonarr will be ran as
 - `['sonarr']['group']` (`String`) - group which owns the sonarr installation
 - `['sonarr']['home']` (`String`) - directory where sonarr will place its `.config` directory
-- `['sonarr']['settings']` (`Hash`) - configuration options
-  - `['sonarr']['AnalyticsEnabled']` (`String`) - `'True'`
-  - `['sonarr']['ApiKey']` (`String`) - `'changeme'`
-  - `['sonarr']['AuthenticationMethod']` (`String`) - `'None'`
-  - `['sonarr']['BindAddress']` (`String`) - `'*'`
-  - `['sonarr']['Branch']` (`String`) - `'master'`
-  - `['sonarr']['EnableSsl']` (`String`) - `'False'`
-  - `['sonarr']['LaunchBrowser']` (`String`) - `'True'`
-  - `['sonarr']['LogLevel']` (`String`) - `'Info'`
-  - `['sonarr']['Port']` (`Integer`) - `8989`
-  - `['sonarr']['SslCertHash']` (`String`) - `''`
-  - `['sonarr']['SslPort']` (`Integer`) - `9898`
-  - `['sonarr']['UpdateMechanism']` (`String`) - `'BuiltIn'`
-  - `['sonarr']['UrlBase']` (`String`) - `''`
+- `['sonarr']['settings']['AnalyticsEnabled']` (`String`) - `'True'`
+- `['sonarr']['settings']['ApiKey']` (`String`) - `'changeme'`
+- `['sonarr']['settings']['AuthenticationMethod']` (`String`) - `'None'`
+- `['sonarr']['settings']['BindAddress']` (`String`) - `'*'`
+- `['sonarr']['settings']['Branch']` (`String`) - `'master'`
+- `['sonarr']['settings']['EnableSsl']` (`String`) - `'False'`
+- `['sonarr']['settings']['LaunchBrowser']` (`String`) - `'True'`
+- `['sonarr']['settings']['LogLevel']` (`String`) - `'Info'`
+- `['sonarr']['settings']['Port']` (`Integer`) - `8989`
+- `['sonarr']['settings']['SslCertHash']` (`String`) - `''`
+- `['sonarr']['settings']['SslPort']` (`Integer`) - `9898`
+- `['sonarr']['settings']['UpdateMechanism']` (`String`) - `'BuiltIn'`
+- `['sonarr']['settings']['UrlBase']` (`String`) - `''`
 
 ##### Empty settings should be defined as a set of quotes. e.g. `''`
 
