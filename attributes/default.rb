@@ -1,10 +1,10 @@
-default[:sonarr][:user] = 'sonarr'
-default[:sonarr][:group] = 'sonarr'
-default[:sonarr][:home] = '/home/sonarr'
+default['sonarr']['user'] = 'sonarr'
+default['sonarr']['group'] = 'sonarr'
+default['sonarr']['home'] = '/home/sonarr'
 
-default[:sonarr][:apt][:uri] = 'http://apt.sonarr.tv/'
+default['sonarr']['apt']['uri'] = 'https://apt.sonarr.tv/'
 
-default[:sonarr][:settings] = {
+default['sonarr']['settings'] = {
   'AnalyticsEnabled' => 'True',
   'ApiKey' => 'changeme',
   'AuthenticationMethod' => 'None',
