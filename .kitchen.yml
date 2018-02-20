@@ -10,8 +10,17 @@ verifier:
 
 platforms:
   - name: debian-9.3
+    driver:
+      network:
+        - ["forwarded_port", {guest: 8989, host: 8989}]
   - name: ubuntu-16.04
+    driver:
+      network:
+        - ["forwarded_port", {guest: 8989, host: 18989}]
   - name: ubuntu-14.04
+    driver:
+      network:
+        - ["forwarded_port", {guest: 8989, host: 28989}]
 
 suites:
   - name: sonarr
