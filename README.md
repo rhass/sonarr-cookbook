@@ -17,12 +17,12 @@ Attributes
 - `['sonarr']['settings']['LaunchBrowser']` (`String`) - `'True'`
 - `['sonarr']['settings']['LogLevel']` (`String`) - `'Info'`
 - `['sonarr']['settings']['Port']` (`Integer`) - `8989`
-- `['sonarr']['settings']['SslCertHash']` (`String`) - `''`
+- `['sonarr']['settings']['SslCertHash']` (`String`) - `nil`
 - `['sonarr']['settings']['SslPort']` (`Integer`) - `9898`
 - `['sonarr']['settings']['UpdateMechanism']` (`String`) - `'BuiltIn'`
-- `['sonarr']['settings']['UrlBase']` (`String`) - `''`
+- `['sonarr']['settings']['UrlBase']` (`String`) - `nil`
 
-##### Empty settings should be defined as a set of quotes. e.g. `''`
+##### Empty settings should be defined as nil.
 
 Usage
 -----
@@ -49,9 +49,11 @@ LICENSE AND AUTHORS
 ===================
 
 * Author:: Jeroen Jacobs <git@jeroenj.be>
+* Author:: James Conant <james@conant.io>
 * Author:: Ryan Hass <ryan@invalidchecksum.net>
 
 * Copyright (c) 2015-2016, Jeroen Jacobs
+* Copyright (c) 2017-2018, James Conant
 * Copyright (c) 2018, Ryan Hass
 
 Permission is hereby granted, free of charge, to any person obtaining

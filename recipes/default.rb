@@ -59,12 +59,12 @@ file ::File.join(node['sonarr']['home'], '.config/NzbDrone/config.xml') do
   user node['sonarr']['user']
   group node['sonarr']['user']
   mode 0600
-  content(lazy {
+  content(lazy do
     require 'nokogiri'
-    Nokogiri::XML::Builder.new {|xml| xml.Config { node[:sonarr][:settings].each {|k,v| xml.send(k, v) } }}.doc.root.to_xml(
+    Nokogiri::XML::Builder.new { |xml| xml.Config { node['sonarr']['settings'].each { |k, v| xml.send(k, v) } } }.doc.root.to_xml(
       save_with: Nokogiri::XML::Node::SaveOptions::NO_EMPTY_TAGS | Nokogiri::XML::Node::SaveOptions::FORMAT
     )
-  })
+  end)
   notifies :restart, 'service[sonarr]'
 end
 
