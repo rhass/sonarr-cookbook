@@ -19,6 +19,7 @@ apt_update
 
 package 'nzbdrone' do
   action :upgrade
+  notifies :restart, 'service[sonarr]', :delayed
 end
 
 systemd_unit 'sonarr.service' do
