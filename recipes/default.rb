@@ -15,6 +15,15 @@ apt_repository 'sonarr' do
   key 'FDA5DFFC'
 end
 
+apt_repository 'mono' do
+  uri "#{node['mono']['apt']['uri']}/#{node['platform']}"
+  distribution node['lsb']['codename']
+  components %w(main)
+  keyserver 'keyserver.ubuntu.com'
+  key '3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF'
+  only_if { node['mono']['apt']['uri'] }
+end
+
 apt_update
 
 package 'nzbdrone' do

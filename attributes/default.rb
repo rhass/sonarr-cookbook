@@ -19,3 +19,5 @@ default['sonarr']['settings'].tap do |sonarr|
   sonarr['UpdateMechanism']       = 'BuiltIn'
   sonarr['UrlBase']               = nil
 end
+
+default['mono']['apt']['uri'] = 'https://download.mono-project.com/repo'
